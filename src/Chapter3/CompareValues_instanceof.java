@@ -3,19 +3,20 @@ package Chapter3;
 
 // Class 1
 // Parent class
-class Parent {}
+class Parent {
+}
 
 // Class 2
 // Child class
-class Child extends Parent {}
+class Child extends Parent {
+}
 
 // Class 3
 // Main class
 public class CompareValues_instanceof {
 
     // Main driver method
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 
         // Creating object of child class
         Child myChild = new Child();
@@ -44,5 +45,23 @@ public class CompareValues_instanceof {
         else
             System.out.println(
                     "myChild is NOT instance of Object");
+    }
+
+    // Example when to use instanceof
+    // it is common to use casting and instanceof together when working with objects that can be various different types
+    public static void openZoo(Number time) {
+        if (time instanceof Integer)
+            System.out.print((Integer) time + " O'clock");
+        else
+            System.out.print(time);
+
+        // Number cannot possibly hold a String value
+//        if(time instanceof String) // DOES NOT COMPILE!!!!!!!
+
+        // Calling instanceof on the null literal or a null reference always returns false
+        System.out.print(null instanceof Object); // false
+
+          // Does not compile, since null is used on the right side of the instanceof operator
+//        System.out.print(null instanceof null); // DOES NOT COMPILE
     }
 }
