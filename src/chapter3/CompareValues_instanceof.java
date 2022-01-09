@@ -1,4 +1,4 @@
-package Chapter3;
+package chapter3;
 // Java program to demonstrate working of instanceof Keyword
 
 // Class 1
