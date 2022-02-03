@@ -62,5 +62,22 @@ public class SwitchStatement {
         // Saturday
 
     }
+    final int getCookies() { return 4; }
+    private int myFunction (final int integerParameter){
+        int id = 1;
+        final int finalInt = 5;
+        final int functionCall = getCookies();
+
+        switch (integerParameter) {
+//            case getCookies(): Does not compile because it is function
+//                id = 4;
+//            case functionCall: Does not compile because it calls function
+//                id=5;
+            case finalInt:
+                id =3;
+        }
+        return id;
+
+    }
 
 }
