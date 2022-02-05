@@ -21,10 +21,19 @@ public class ForLoopStatement {
             System.out.print(name + " ");
         }
 
+        // we can label loops
+        // it is useful if we have break statement. We can write "Break OUTER_LOOP" and it will
+        // break out of a higher-level outer loop
+        int[][] myComplexArray = {{5,2,1,3},{3,9,8,9},{5,7,12,7}};
+        OUTER_LOOP: for(int[] mySimpleArray : myComplexArray) {
+            INNER_LOOP: for(int i=0; i<mySimpleArray.length; i++) {
+                System.out.print(mySimpleArray[i]+"\t");
+            }
+            System.out.println();
+        }
 
-//        for() //Does not compile
+//      for() //Does not compile
         for (; ; ) //! this is an infinite loop that will print the same statement repeatedly
             System.out.println("lala");
-
     }
 }
