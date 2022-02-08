@@ -28,12 +28,21 @@ public class ForLoopStatement {
         OUTER_LOOP: for(int[] mySimpleArray : myComplexArray) {
             INNER_LOOP: for(int i=0; i<mySimpleArray.length; i++) {
                 System.out.print(mySimpleArray[i]+"\t");
+                break OUTER_LOOP;
             }
             System.out.println();
         }
 
+        // we can use label, same as with break statement
+        for(int i=1;i<=10;i++){
+            if(i==5){
+                continue; //it will skip the rest and go back to beginning of for loop
+            }
+            System.out.println(i); // num 5 is not printed out
+        }
+
 //      for() //Does not compile
-        for (; ; ) //! this is an infinite loop that will print the same statement repeatedly
-            System.out.println("lala");
+//        for (; ; ) //! this is an infinite loop that will print the same statement repeatedly
+//            System.out.println("lala");
     }
 }

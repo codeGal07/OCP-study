@@ -5,9 +5,11 @@ public class SwitchStatement {
         int month = 5;
         switch (month) {
             // that is the bitwise result of 1 | 2, which is 3 (01 or 10 = 11)
-            case 1 | 2: System.out.print("January");
+            case 1 | 2:
+                System.out.print("January");
         }
-        switch (month) {} // DOES COMPILE
+        switch (month) {
+        } // DOES COMPILE
 
         switch (month) {
             case 1:
@@ -32,7 +34,7 @@ public class SwitchStatement {
 //        }
 
         int dayOfWeek = 5;
-        switch(dayOfWeek) {
+        switch (dayOfWeek) {
             case 0:
                 System.out.println("Sunday");
             default:
@@ -50,7 +52,7 @@ public class SwitchStatement {
 //        is no matching case value for the switch statement, regardless of its position within the
 //        switch statement.
         dayOfWeek = 6;
-        switch(dayOfWeek) {
+        switch (dayOfWeek) {
             case 0:
                 System.out.println("Sunday");
             default:
@@ -61,9 +63,45 @@ public class SwitchStatement {
         }
         // Saturday
 
+        final char a = 'A', e = 'E';
+        char grade = 'B';
+
+        switch (grade) {
+            default:
+            case a:
+            case 'B':
+            case 'C':
+                System.out.print("great "); // Does compile
+            case 'D':
+        }
+
+        String instrument = "violin";
+        final String CELLO = "cello";
+        String viola = "viola";
+        int p = -1;
+        switch (instrument) {
+            case "bass":
+                break;
+            case CELLO:
+                p++;
+            default:
+                p++; // goes here
+            case "VIOLIN":
+                p++; // goes here because there is no break
+            case "viola":
+                ++p; // goes here because there is no break
+                break;
+        }
+        System.out.print(p);
+
+
     }
-    final int getCookies() { return 4; }
-    private int myFunction (final int integerParameter){
+
+    final int getCookies() {
+        return 4;
+    }
+
+    private int myFunction(final int integerParameter) {
         int id = 1;
         final int finalInt = 5;
         final int functionCall = getCookies();
@@ -74,7 +112,7 @@ public class SwitchStatement {
 //            case functionCall: Does not compile because it calls function
 //                id=5;
             case finalInt:
-                id =3;
+                id = 3;
         }
         return id;
 
